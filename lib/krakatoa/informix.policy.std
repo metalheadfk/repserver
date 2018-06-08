@@ -1,0 +1,13 @@
+// informix security policy
+// dummy policy
+// informix default policy as follows:
+// grant codeBase "file:$(JVPHOME)/-"{
+//       permission java.security.AllPermission;
+//};
+//grant { 
+//	permission java.util.PropertyPermission "user.language", "write";
+//	permission java.security.SecurityPermission "getPolicy";
+//	permission java.net.NetPermission "specifyStreamHandler";
+//	permission java.lang.reflect.ReflectPermission "suppressAccessChecks";
+//};
+// users can add their security policy in ${JVPHOME}/informix.policy.

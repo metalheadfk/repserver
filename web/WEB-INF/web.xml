@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <context-param>
+        <param-name>crystal_image_uri</param-name>
+        <param-value>/crystalreportviewers</param-value>
+    </context-param>
+    <context-param>
+        <param-name>crystal_image_use_relative</param-name>
+        <param-value>webapp</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>CrystalReportViewerServlet</servlet-name>
+        <servlet-class>com.crystaldecisions.report.web.viewer.CrystalReportViewerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrystalReportViewerServlet</servlet-name>
+        <url-pattern>/CrystalReportViewerHandler</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

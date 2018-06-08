@@ -1,0 +1,38 @@
+The examples in this directory include:
+
+    * A couple Java user-defined functions demonstrating the use of the
+        com.informix.udr interface:
+
+        Env.java
+        Env.sql
+
+    * A user-defined function using server-side JDBC
+
+        JDBC.java
+        JDBC.sql
+
+    * A user-defined function testing large objects w/ and w/o JDBC
+
+        LO.java
+        LO.sql
+
+    * A user-defined type called "circle" implemented partly in Java
+
+        Circle.java
+        circle.h
+        circle.c
+        Circle.sql
+
+Here are the steps for running the examples:
+
+    1. Customize the URLs used by the install_jar calls in all SQL
+        scripts. Replace "$INFORMIXDIR" with the directory where the Informix
+        server is installed.
+
+    2. Type "make" to build the examples. Make sure the following files are
+       included in your CLASSPATH environment variable before attempting make -
+       $INFORMIXDIR/extend/krakatoa/krakatoa(_g).jar
+       $INFORMIXDIR/extend/krakatoa/jdbc(_g).jar
+  
+    3. Execute "run.sh" to run all examples.  Make sure you have created 
+        your default smart blob space.

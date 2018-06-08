@@ -1,0 +1,28 @@
+#!/bin/sh
+ver=$1
+dir=$2
+echo "setting up links to jdk version ${ver} in ${dir}"
+
+libjdk11="java net math zip jpeg mmedia sysresource agent sunwjit"
+libjdk122="hpi java jvm"
+
+echo "removing old links"
+for l in ${libjdk11} ${libjdk122}
+do
+	echo "rm -f /usr/lib/lib${l}.so"
+	echo "rm -f /usr/lib/lib${l}_g.so"
+	rm -f /usr/lib/lib${l}.so
+	rm -f /usr/lib/lib${l}_g.so
+done
+
+if [ "${ver}" = "jdk12" ]
+then
+	echo "linking to ${dir}/extend/krakatoa/jre/lib/sparc/native_threads/libhpi.so"
+	ln -s ${dir}/extend/krakatoa/jre/lib/sparc/native_threads/libhpi.so /usr/lib/libhpi.so
+
+	echo "linking to ${dir}/extend/krakatoa/jre/lib/sparc/libjava.so"
+	ln -s ${dir}/extend/krakatoa/jre/lib/sparc/libjava.so /usr/lib/libjava.so
+
+	echo "linking to ${dir}/extend/krakatoa/jre/lib/sparc/classic/libjvm.so"
+	ln -s ${dir}/extend/krakatoa/jre/lib/sparc/classic/libjvm.so /usr/lib/libjvm.so
+fi

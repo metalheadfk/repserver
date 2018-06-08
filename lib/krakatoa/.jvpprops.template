@@ -1,0 +1,74 @@
+#
+#	Template JVP Properties file
+#
+
+# Uncomment the following lines as you see fit.
+
+# trace.settings:
+#
+# 	Uncomment the following to obtain execution trace. You can also
+# 	increase the details and amount of tracing (5 is currently the maximum
+# 	trace level).  You also need to use the _g version of krakatoa.jar, e.g.
+# 	krakatoa_g.jar
+#
+#JVP.trace.settings:JVP=2
+#
+######################################### 
+#
+#  trace.verbose:
+#  	Set to 0 to minimize what clutter on the trace line.
+#  	You still get the same number of lines of trace
+#
+#JVP.trace.verbose:1
+#
+######################################### 
+#
+#  trace.timeStampFormat:
+#	Set to nothing will cause no timestamp to print in the log
+#	see SimpleDateFormat in the JDK documentation for possible values.
+#  Default:
+#	yyyy/MM/dd HH:mm:ss.SSS
+#
+#JVP.trace.timestampformat:
+#	Set to HH:mm prints 24 hour Hours and minutes.
+#JVP.trace.timestampformat: HH:mm
+#
+######################################### 
+#
+#  splitLog
+#
+#	Default is no split log, all output goes to onconfig's JVPLOGFILE
+#	If splitLog is set:
+#		Stdout/stderr continues goes to jvp.log
+#		Java logging is split to one log file per JVP.
+#		When the number of lines exceeds the value (1000 below)
+#		the file is moved to <name>old.
+#
+#		  for example, if jvp.log is your log file, JVP #4's log and
+#		  saved log file names are:
+#
+#			jvp.log4, jvp.log4old
+#
+#JVP.splitLog:1000
+#
+######################################### 
+#
+#  monitor.port
+#
+#     Specify the starting port number for use by the debugging facilities.
+#     Setting JVP.monitor.port allows the user to query the state
+#     of the individual Java VPs via the builtin function "jvpcontrol".
+#
+#JVP.monitor.port:10000
+######################################### 
+#
+#  enable_type_cache
+#
+#     Enable external type map caching for Complex Type (Set, List, Multiset,
+#     row) types in UDR parameters.   Defaults to true.
+#     If set to false, each udr call with complex type parameter will query
+#     a system table.   Only set to false if dynamically set/unsetting
+#     type mapping during the executions of UDRs.
+#
+#JVP.enable_type_cache:false
+######################################### 
