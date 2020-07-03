@@ -34,56 +34,12 @@ public class reportServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String module = new String(request.getParameter("module").getBytes(), "TIS-620");
-        if (module.equals("getapprovelog")) {
-            getapprovelog(request, response);
-        }else if (module.equals("getcountrycount")) {
-            getcountrycount(request, response);
-        }
+       
         
         
     }
     
-    protected void getapprovelog(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-       PrintWriter out = response.getWriter();
-       try {
-           
-             HttpSession session = request.getSession();
-            String appcode = (String) session.getAttribute("sessionCode");
-            String empid = request.getParameter("xempcode");
-            String xfrom = request.getParameter("xfrom");
-            String xto = request.getParameter("xto");
-            
-            clsQuery cQuery = new clsQuery();
-            String sapp = "" ;
-            sapp = cQuery.getapprovelog(appcode,empid,xfrom,xto);
-            out.print(sapp);
-        } catch (Exception ex) {
-            out.print("");
-            ex.printStackTrace(response.getWriter());
-        }
-
-    }
-    
-    protected void getcountrycount(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-       PrintWriter out = response.getWriter();
-       try {
-            
-            String xcntry = request.getParameter("xcntry");
-            String xfrom = request.getParameter("xfrom");
-            String xto = request.getParameter("xto");
-            
-            clsQuery cQuery = new clsQuery();
-            String sapp = "" ;
-            sapp = cQuery.getcountrycount(xcntry,xfrom,xto);
-            out.print(sapp);
-        } catch (Exception ex) {
-            out.print("");
-            ex.printStackTrace(response.getWriter());
-        }
-
-    }
+     
     
     
 

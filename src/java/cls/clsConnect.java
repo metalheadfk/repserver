@@ -27,7 +27,7 @@ public class clsConnect {
     }
 
     private String GetUrlConnection(String database_server, String database_host, String database_login, String database_pwd) {
-        return "jdbc:informix-sqli://" + database_host + ":1527/a4acct:INFORMIXSERVER=" + database_server + ";user=" + database_login + ";password=" + database_pwd 
+        return "jdbc:informix-sqli://" + database_server + ":1527/dbmet:INFORMIXSERVER=" + database_host + ";user=" + database_login + ";password=" + database_pwd
                 + ";DB_LOCALE=th_th.thai620;CLIENT_LOCALE=th_th.thai620;" + "NEWLOCALE=th_TH,th_th;NEWCODESET=MS874,thai620,57373";
     }
 

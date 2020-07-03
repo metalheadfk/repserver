@@ -19,7 +19,10 @@
     viewer.setDisplayGroupTree(false);
     viewer.setReportSource(reportSource);
     viewer.setOwnPage(true);
-    viewer.processHttpRequest(request, response, getServletConfig().getServletContext(), null);
+    viewer.processHttpRequest(request, response, getServletConfig().getServletContext(), null); 
+    viewer.refresh();
+    viewer.dispose();
+    
 
     
 %>
