@@ -1,3 +1,4 @@
+<%@page import="java.awt.GraphicsEnvironment"%>
 <%@page import="com.crystaldecisions.reports.sdk.*" %> 
 <%@page import="com.crystaldecisions.sdk.occa.report.reportsource.*" %> 
 <%@page import="com.crystaldecisions.sdk.occa.report.lib.*" %> 
@@ -6,6 +7,7 @@
 
 <%
 
+GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 ReportClientDocument reportClientDoc = new ReportClientDocument(); 
 String report = "repform5.rpt"; 
 reportClientDoc.open(report, 0); 

@@ -15,7 +15,8 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.mail.*;
-import javax.mail.internet.*;
+import javax.mail.internet.*; 
+import sun.misc.BASE64Decoder;
 import sun.net.smtp.SmtpClient;
 
 public class clsQuery {
@@ -25,7 +26,11 @@ public class clsQuery {
         Graphics2D g = resizedImage.createGraphics();
         g.drawImage(originalImage, 0, 0, IMG_WIDTH, IMG_HEIGHT, null);
         g.dispose();
-
+        
+        
+        
+         
+          
         return resizedImage;
     }
 
